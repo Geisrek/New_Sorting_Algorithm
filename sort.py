@@ -5,26 +5,35 @@ Created on Sat Oct 28 14:12:09 2023
 @author: USER
 """
 
-lst=[11,2,3,7,9,5]
+lst=[11,2,100,10,7,9,5,5,1,-1]
 def sort(lst):
     l2=[]
     l3=[]
     size=len(lst)
     if size==2 :
-        lst[0],lst[1]=lst[1],lst[0] if lst[1]>lst[0] else lst
+        if lst[0]>lst[1]:
+            lst[0],lst[1]=lst[1],lst[0]
         return lst
-    if size==0:
-        return[]
+    if size<=1:
+        return lst
+    #print(lst)
     Sum=sum(lst)
     Average=Sum/size
-    div=size/Sum
     for x in lst:
         if x>Average:
             l2.append(x)
         else:
             l3.append(x)
-    return l3+sort(l2)
+    l4=[]
+    l5=[]
+    if size>=2:
+        l4=sort(l3)
+        l5=sort(l2)
+    print(l3,l2,Average)
+    return l4+l5
 print(sort(lst))
+
+
 
 
 """
