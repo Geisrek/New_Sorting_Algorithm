@@ -23,7 +23,6 @@ def averageSort(lst):
         if lst[0]>lst[1]:
             lst[0],lst[1]=lst[1],lst[0]
         return lst
-    
     #print(lst)
     Sum=sum(lst)
     Average=Sum/size
@@ -32,10 +31,7 @@ def averageSort(lst):
             Grater.append(x)
         else:
             Less.append(x)
-    Left=[]
-    Right=[]
-    if size>=2:
-        lst=averageSort(Less)+averageSort(Grater)
+    lst=averageSort(Less)+averageSort(Grater)
         
     return lst
 print(averageSort(lst))
