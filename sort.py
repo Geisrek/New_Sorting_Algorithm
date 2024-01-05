@@ -20,7 +20,7 @@ def average(lst):
     Grater=[]
     Less=[]
     size=len(lst)
-    if size<=1:
+    if size<=1 or all(x==lst[0] for x in lst):
         return lst
     elif size==2 :
         if lst[0]>lst[1]:
@@ -29,17 +29,12 @@ def average(lst):
     #print(lst)
     Sum=sum(lst)
     Average=Sum/size
-    check_similar=[False]*len(lst)
     index=0
     for x in lst:
         if x>Average:
             Grater.append(x)
         else:
             Less.append(x)
-        if x==lst[0]:
-            check_similar.pop()
-    if len(check_similar)==0:
-        return lst
     lst=average(Less)+average(Grater)
     return lst
 def averageSort(lst):
