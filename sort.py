@@ -35,16 +35,13 @@ def average(lst):
             Grater.append(x)
         else:
             Less.append(x)
-    lst=average(Less)+average(Grater)
-    return lst
-def averageSort(lst):
-  size=len(lst)
-  Arr=average(lst)
-  i=0
-  while i<size:
-      lst[i]=Arr[i]
-      i+=1
-averageSort(lst)
+    average(Less)
+    average(Grater)
+    helper_lst=Less+Grater
+    for x in range(len(lst)):
+        lst[x]=helper_lst[x]
+
+average(lst)
 print(lst)
 
 
